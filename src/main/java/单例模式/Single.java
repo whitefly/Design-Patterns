@@ -11,15 +11,9 @@ public class Single {
         if (instance == null) {
             synchronized (Single.class) {
                 if (instance == null) {
-                    try {
-                        Thread.sleep(1);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                     instance = new Single();
                 }
             }
-
         }
         return instance;
     }

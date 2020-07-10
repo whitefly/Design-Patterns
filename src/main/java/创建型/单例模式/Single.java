@@ -1,4 +1,4 @@
-package 单例模式;
+package 创建型.单例模式;
 
 public class Single {
     private static volatile Single instance = null;  //设置volatile防止指令重排

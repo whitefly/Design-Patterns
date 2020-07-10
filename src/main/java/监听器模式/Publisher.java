@@ -1,8 +1,8 @@
 package 监听器模式;
 
-public interface EventCaster {
+public interface Publisher {
 
-    void castEvent(WeatherEvent event);
+    void publishMsg(Message event);
 
     void addListener(WeatherListener listener);
 

@@ -3,14 +3,18 @@ package 监听器模式;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbsEventCaster implements EventCaster {
+public abstract class AbsPublisher implements Publisher {
 
-    private List<WeatherListener> listeners = new ArrayList<>();
+    private final List<WeatherListener> listeners = new ArrayList<>();
 
     @Override
-    public void castEvent(WeatherEvent event) {
+    public void publishMsg(Message event) {
         doBefore();
-        listeners.forEach(listener -> listener.doHandle(event));
+        for (WeatherListener listener : listeners) {
+            if (listener.isInterested(event)) {
+                listener.doHandle(event);
+            }
+        }
         doAfter();
     }
 

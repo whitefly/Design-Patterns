@@ -1,6 +1,6 @@
 package 监听器模式;
 
-public class SimpleEventCaster extends AbsEventCaster {
+public class SimplePublisher extends AbsPublisher {
 
     @Override
     public void doBefore() {
